@@ -23,7 +23,7 @@ public class Usuario implements Serializable{
 	
 	private int premium;
 	
-    public int cod_zodiaco;
+    public long codZodiaco;
     
 
 	public long getId() {
@@ -48,6 +48,14 @@ public class Usuario implements Serializable{
 
 	public void setPremium(int premium) {
 		this.premium = premium;
+	}
+
+	public long getCod_zodiaco() {
+		return codZodiaco;
+	}
+
+	public void setCod_zodiaco(long cod_zodiaco) {
+		this.codZodiaco = cod_zodiaco;
 	}
 
 

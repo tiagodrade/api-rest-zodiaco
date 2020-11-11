@@ -42,7 +42,7 @@ public class ZodiacoResource {
 	
 	@GetMapping("/zodiacos/{id}&{premium}")
 	@ApiOperation(value="Parametros codSigno e premium. Retorna os dados do signo de acordo com perfil do usuario")
-	public Zodiaco listaUmZodiaco(@PathVariable(value="id") long id, @PathVariable(value="premium") int premium){
+	public Zodiaco listaUmZodiaco(@PathVariable(value="codSigno") long id, @PathVariable(value="premium") int premium){
 		
 		if(premium == 1) {
 			return zodiacoRepository.findById(id);
@@ -59,9 +59,22 @@ public class ZodiacoResource {
 	
 	@GetMapping("/validarUsuario/{nome}")
 	@ApiOperation(value="Retorna um usuario cadastrado pelo nome")
-	public Usuario validaUsuario(@PathVariable(value="nome") String nome){
-		return usuarioRepository.findByNome(nome);	
-		 
+	public Zodiaco validarUsuario(@PathVariable(value="nome") String nome){
+		Zodiaco zodiaco = new Zodiaco();
+		Usuario usuario = usuarioRepository.findByNome(nome);	
+		
+		if(usuario.getPremium() == 1) {
+			zodiaco = zodiacoRepository.findById(usuario.codZodiaco);
+			return zodiaco;
+		}
+		else {
+			zodiaco.setSigno(zodiacoRepository.findById(usuario.codZodiaco).getSigno());
+			zodiaco.setDescricao(zodiacoRepository.findById(usuario.codZodiaco).getDescricao());
+			return zodiaco;
+		}
+		
+		
+		
 	}
 	
 	@GetMapping("/listarUsuarios")
