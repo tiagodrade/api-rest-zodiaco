@@ -53,7 +53,7 @@ public class ZodiacoResource {
 	}
 	
 	@GetMapping("/validarUsuario/{nome}")
-	@ApiOperation(value="Retorna um usuario cadastrado pelo nome")
+	@ApiOperation(value="Retorna todos os usuários cadastrados")
 	public List<Usuario> validaUsuario(){
 		return usuarioRepository.findAll();
 	}
