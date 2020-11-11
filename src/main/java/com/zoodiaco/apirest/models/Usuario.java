@@ -22,6 +22,8 @@ public class Usuario implements Serializable{
 	private String nome;
 	
 	private int premium;
+	
+	private int signo;
 
 	public long getId() {
 		return id;
@@ -45,6 +47,14 @@ public class Usuario implements Serializable{
 
 	public void setPremium(int premium) {
 		this.premium = premium;
+	}
+
+	public int getSigno() {
+		return signo;
+	}
+
+	public void setSigno(int signo) {
+		this.signo = signo;
 	}
 
 	

@@ -40,7 +40,6 @@ public class ZodiacoResource {
 		return zodiacoRepository.findAll();
 	}
 	
-	
 	@GetMapping("/zodiacos/{id}")
 	@ApiOperation(value="Retorna um zodiaco pelo parâmetro id")
 	public Zodiaco listaUmZodiaco(@PathVariable(value="id") long id){

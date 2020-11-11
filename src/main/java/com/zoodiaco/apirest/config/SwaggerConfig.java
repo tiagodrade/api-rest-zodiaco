@@ -37,11 +37,11 @@ public class SwaggerConfig {
                 "API REST - ZODIACOS",
                 "API REST de zodiacos.",
                 "1.0",
-                "Terms of Service",
+                "",
                 new Contact("Tiago Andrade", "",
                         "tiagodrade18@gmail.com"),
-                "Apache License Version 2.0",
-                "https://www.apache.org/licesen.html", new ArrayList<VendorExtension>()
+                "",
+                "", new ArrayList<VendorExtension>()
         );
         //retorno das informacoes da api
         return apiInfo;
