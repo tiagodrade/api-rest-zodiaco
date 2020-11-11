@@ -58,7 +58,7 @@ public class ZodiacoResource {
 	}
 	
 	@GetMapping("/validarUsuario/{nome}")
-	@ApiOperation(value="Retorna um usuario cadastrado pelo nome")
+	@ApiOperation(value="Verifica se existe usuario e retorna suas caracteristicas de acordo com  o plano")
 	public Zodiaco validarUsuario(@PathVariable(value="nome") String nome){
 		Zodiaco zodiaco = new Zodiaco();
 		Usuario usuario = usuarioRepository.findByNome(nome);	
