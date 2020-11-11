@@ -26,8 +26,6 @@ public class Zodiaco implements Serializable {
 	
 	private String elemento;
 	
-	private String frase;
-	
 	private String planetaRegente;
 	
 	public String getElemento() {
@@ -38,13 +36,6 @@ public class Zodiaco implements Serializable {
 		this.elemento = elemento;
 	}
 
-	public String getFrase() {
-		return frase;
-	}
-
-	public void setFrase(String frase) {
-		this.frase = frase;
-	}
 
 	public long getId() {
 		return id;
