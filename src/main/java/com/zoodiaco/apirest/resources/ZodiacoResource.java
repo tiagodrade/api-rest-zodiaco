@@ -3,6 +3,7 @@ package com.zoodiaco.apirest.resources;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -15,10 +16,13 @@ import com.zoodiaco.apirest.models.Zodiaco;
 import com.zoodiaco.apirest.repository.UsuarioRepository;
 import com.zoodiaco.apirest.repository.ZodiacoRepository;
 
+import io.swagger.annotations.Api;
+
 
 @RestController
 @RequestMapping(value="/api")
-
+@Api(value="API REST - ZODIACO")
+@CrossOrigin(origins = "*") //Liberar os dominios para acessar a api
 public class ZodiacoResource {
 
 	//import repository
