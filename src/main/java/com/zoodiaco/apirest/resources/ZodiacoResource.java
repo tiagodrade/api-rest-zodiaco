@@ -46,8 +46,20 @@ public class ZodiacoResource {
 	public Zodiaco listaUmZodiaco(@PathVariable(value="id") long id){
 		return zodiacoRepository.findById(id);
 	}
+	
+	@GetMapping("/validarUsuario/{nome}")
+	@ApiOperation(value="Retorna um usuario cadastrado pelo nome")
+	public Usuario validaUsuario(@PathVariable(value="nome") String nome){
+		return usuarioRepository.findByNome(nome);
+	}
+	
+	@PostMapping("/cadastrarZodiaco")
+	@ApiOperation(value="Cadastra um novo zodiaco")
+	public Zodiaco salvaZodiaco(@RequestBody Zodiaco zodiaco) {
+		return zodiacoRepository.save(zodiaco);
+	}
 		
-	@PostMapping("/cadastrar")
+	@PostMapping("/cadastrarUsuario")
 	@ApiOperation(value="Cadastra um novo usuario")
 	public Usuario salvaUsuario(@RequestBody Usuario usuario) {
 		return usuarioRepository.save(usuario);
