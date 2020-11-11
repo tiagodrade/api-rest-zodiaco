@@ -17,6 +17,7 @@ import com.zoodiaco.apirest.repository.UsuarioRepository;
 import com.zoodiaco.apirest.repository.ZodiacoRepository;
 
 import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 
 
 @RestController
@@ -34,17 +35,20 @@ public class ZodiacoResource {
 	
 	//Listar zodiacos salvos
 	@GetMapping("/zodiacos")
+	@ApiOperation(value="Retorna uma lista de todos os zodiacos")
 	public List<Zodiaco> listaZodiacos(){
 		return zodiacoRepository.findAll();
 	}
 	
 	
 	@GetMapping("/zodiacos/{id}")
+	@ApiOperation(value="Retorna um zodiaco pelo parâmetro id")
 	public Zodiaco listaUmZodiaco(@PathVariable(value="id") long id){
 		return zodiacoRepository.findById(id);
 	}
 		
 	@PostMapping("/cadastrar")
+	@ApiOperation(value="Cadastra um novo usuario")
 	public Usuario salvaUsuario(@RequestBody Usuario usuario) {
 		return usuarioRepository.save(usuario);
 	}

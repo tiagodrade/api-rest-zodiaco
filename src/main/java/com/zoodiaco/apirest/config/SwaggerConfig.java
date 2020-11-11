@@ -24,7 +24,7 @@ public class SwaggerConfig {
     public Docket productApi() {
         return new Docket(DocumentationType.SWAGGER_2)
                 .select()
-                .apis(RequestHandlerSelectors.basePackage("com.produtos.apirest"))
+                .apis(RequestHandlerSelectors.basePackage("com.zoodiaco.apirest"))
                 .paths(regex("/api.*"))
                 .build()
                 .apiInfo(metaInfo());
@@ -34,7 +34,7 @@ public class SwaggerConfig {
     private ApiInfo metaInfo() {
 
         ApiInfo apiInfo = new ApiInfo(
-                "Produtos API REST",
+                "API REST - ZODIACOS",
                 "API REST de zodiacos.",
                 "1.0",
                 "Terms of Service",
